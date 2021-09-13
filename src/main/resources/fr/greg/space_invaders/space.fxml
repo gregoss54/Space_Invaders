@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane fx:id="board" prefHeight="600.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/background.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblEndGame" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="306.0" prefWidth="600.0" textAlignment="CENTER" textFill="#009402">
+               <font>
+                  <Font name="Arial Black" size="85.0" />
+               </font>
+            </Label>
+            <Pane layoutY="534.0" prefHeight="66.0" prefWidth="600.0" style="-fx-background-color: green;">
+               <children>
+                  <Button layoutX="31.0" layoutY="12.0" mnemonicParsing="false" onAction="#onStartAction" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: transparent; -fx-border-radius: 10; -fx-border-style: solid; -fx-border-width: 2; -fx-border-radius: 10; -fx-border-color: #009402;" text="START" textAlignment="CENTER" textFill="#0d0000" textOverrun="CLIP">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="137.0" layoutY="12.0" mnemonicParsing="false" onAction="#onStopAction" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: transparent; -fx-background-radius: 10; -fx-border-style: solid; -fx-border-width: 2; -fx-border-radius: 10; -fx-border-color: #009402;" text="STOP" textFill="#110000">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label layoutX="440.0" layoutY="17.0" text="Score :">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblScore" layoutX="518.0" layoutY="17.0" text="2020">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17d30d" height="5.0" stroke="BLACK" strokeType="INSIDE" width="540.0" x="30.0" y="530.0" />
+      <HBox alignment="CENTER" prefHeight="270.0" prefWidth="572.0" />
+   </children>
+</Pane>
