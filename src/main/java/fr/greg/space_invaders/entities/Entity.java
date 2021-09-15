@@ -15,17 +15,18 @@ public abstract class Entity extends Rectangle {
     }
 
     //Getters et setters
-
-
     public Image getImg() {
+
         return img;
     }
 
     public void setImg(Image img) {
+
         this.img = img;
     }
 
     public ImagePattern getImgPattern() {
+
         return imgPattern;
     }
 
