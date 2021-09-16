@@ -20,4 +20,11 @@ public class Images {
     public final static ImagePattern BRICK3 = new ImagePattern(IMG_BRICK3);
     public final static ImagePattern BRICK4 = new ImagePattern(IMG_BRICK4);
 
+    public final static Image ALIENHIGH1 = new Image( PATH + "alienHigh1.png");
+    public final static Image ALIENHIGH2 = new Image( PATH + "alienHigh2.png");
+    public final static Image ALIENMIDDLE1 = new Image( PATH + "alienMiddle1.png");
+    public final static Image ALIENMIDDLE2 = new Image( PATH + "alienMiddle2.png");
+    public final static Image ALIENBOTTOM1 = new Image( PATH + "alienBottom1.png");
+    public final static Image ALIENBOTTOM2 = new Image( PATH + "alienBottom2.png");
+
 }

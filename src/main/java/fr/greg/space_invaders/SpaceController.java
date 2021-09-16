@@ -1,5 +1,6 @@
 package fr.greg.space_invaders;
 
+import fr.greg.space_invaders.entities.Alien;
 import fr.greg.space_invaders.entities.Brick;
 import fr.greg.space_invaders.entities.Ship;
 import fr.greg.space_invaders.entities.ShipShot;
@@ -22,6 +23,9 @@ public class SpaceController {
     private AnimationTimer timer;
     private int shipDeltaX;
     private List<Brick>  walls;
+    private Alien[][] aliens;
+    private static long movingAliensCount;
+    private static int speed = Constants.ALIEN_SPEED;
 
 
     @FXML
@@ -30,19 +34,24 @@ public class SpaceController {
     @FXML
     private Label lblEndGame, lblScore;
 
-    public SpaceController() {
+    public <movingAliensCount> SpaceController() {
         timer = new AnimationTimer() {
             @Override
             public void handle(long l) {
+                movingAliensCount++;
                 handleShip();
 
-                if(ship.isShipIsShooting()) {
+                if (ship.isShipIsShooting()) {
                     handleShipShot();
 
                 }
                 shipShotCollisions();
 
 
+            if (movingAliensCount % 100 - (10* speed) == 0) {
+                Alien.aliensMoving(aliens, speed);
+
+            }
 
             }
         };
@@ -55,6 +64,8 @@ public class SpaceController {
         shipShot = new ShipShot(0 - Constants.SHIP_SHOT_WIDTH, 0 - Constants.SHIP_SHOT_HEIGHT,
                 Constants.SHIP_SHOT_WIDTH, Constants.SHIP_SHOT_HEIGHT);
         walls = new LinkedList<>();
+        aliens = new Alien[5][10];
+        movingAliensCount = 0;
 
         lblEndGame.setText("");
     }
@@ -66,6 +77,7 @@ public class SpaceController {
         Initialisation.initShip(ship, board);
         Initialisation.initShipShot(shipShot, board);
         Initialisation.initWalls(80, 400, 80, walls, board);
+        Initialisation.initAliens(aliens, board);
 
         timer.start();
     }
@@ -127,7 +139,7 @@ public class SpaceController {
             }
         }
 
-        
+
     @FXML
     public void onKeyReleased(KeyEvent keyEvent) {
         shipDeltaX = 0;
